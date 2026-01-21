@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "MangaPark Image Fix",
+  "version": "1.2.2",
+  "description": "Automatically fixes MangaPark image loading issue",
+  "action": {
+    "default_icon": "mangapark.png",
+    "default_popup": "mangapark.html"
+  },
+  "permissions": ["activeTab", "storage"],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.mangapark.org/*",
+        "*://*.mangapark.net/*",
+        "*://*.mangapark.to/*",
+        "*://*.mangapark.io/*",
+        "*://*.comicpark.org/*",
+        "*://*.comicpark.to/*",
+        "*://*.readpark.org/*",
+        "*://*.readpark.net/*",
+        "*://*.mpark.to/*",
+        "*://*.fto.to/*",
+        "*://*.jto.to/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
